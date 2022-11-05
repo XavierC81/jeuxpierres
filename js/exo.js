@@ -53,12 +53,15 @@ function ajoutPoids(sac) {
 
   // Si le sac choisi est le sac 1, on ajoute le poids de la pierre sÃ©lÃ©ctionnÃ© au sac1
   if (sac == document.querySelector(".sac1")) {
-    sac1.poidsSac += pierreSelectionne.poidsPierre;
-    document.querySelector(".s1").textContent = sac1.poidsSac;
-    const p = pierreArray.find(
-      (p) => p.idPierre === pierreSelectionne.idPierre
+    let ajoutPossible = verifPoidsSac(
+      pierreSelectionne.poidsPierre,
+      sac1.poidsSac
     );
-    p.poidsPierre = Math.floor(Math.random() * 7) + 1;
+    if (ajoutPossible === true) {
+      ajoutPierreDansSac();
+    }
+
+    reinitialiserPierre();
   } else if (sac == document.querySelector(".sac2")) {
     //Sinon si le sac choisi est le sac2, on ajoute le poids de la pierre sÃ©lÃ©ctionnÃ© au sac2
     sac = pierre.poidsPierre;
@@ -70,6 +73,17 @@ function ajoutPoids(sac) {
   refreshPierre();
 }
 
+function reinitialiserPierre() {
+  const p = pierreArray.find((p) => p.idPierre === pierreSelectionne.idPierre);
+
+  p.poidsPierre = Math.floor(Math.random() * 7) + 1;
+}
+
+function ajoutPierreDansSac() {
+  sac1.poidsSac += pierreSelectionne.poidsPierre;
+  document.querySelector(".s1").textContent = sac1.poidsSac;
+}
+
 function refreshPierre() {
   document.querySelector(".pierre1").textContent = pierre1.poidsPierre;
   document.querySelector(".pierre2").textContent = pierre2.poidsPierre;
@@ -78,4 +92,17 @@ function refreshPierre() {
   document.querySelector(".p1").classList.remove("scale");
   document.querySelector(".p2").classList.remove("scale");
   document.querySelector(".p3").classList.remove("scale");
+}
+
+function verifPoidsSac(poidsPierre, poidsSac) {
+  let pierreAjouter = true;
+  if (poidsPierre + poidsSac > 25) {
+    points -= poidsPierre;
+    pierreAjouter = false;
+  } else {
+    points += poidsPierre;
+  }
+  document.querySelector(".points").textContent =
+    "Vous avez " + points + " points";
+  return pierreAjouter;
 }
