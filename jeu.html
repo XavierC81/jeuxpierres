@@ -1,49 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
 
-  <body>
-    <h1>Jeu des pierres</h1>
-    <div class="sacs">
-      <div class="sac1" onclick="ajoutPoids(this)">
-        <img src="img/sack.svg" alt="" />
-        <p>Le poids du sac est de <span class="s1"></span> kg sur 25kg</p>
-      </div>
-      <div class="sac2" onclick="ajoutPoids(this)">
-        <img src="img/sack.svg" alt="" />
-        <p>Le poids du sac est de <span class="s2"></span> kg sur 25kg</p>
-      </div>
-      <div class="sac3" onclick="ajoutPoids(this)">
-        <img src="img/sack.svg" alt="" />
-        <p>Le poids du sac est de <span class="s3"></span> kg sur 25kg</p>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- Div pour un test -->
+  <h1>Jeu des pierres</h1>
+  <div class="sacs">
+    <div class="sac1" onclick="ajoutPoids(this)">
+      <img src="img/sack.svg" alt="" />
+      <p>Le poids du sac est de <span class="s1"></span> kg sur 25kg</p>
     </div>
-    <div class="pierres">
-      <div class="p1" onclick="selection(this)">
-        <img src="img/rock.svg" alt="" />
-        <p>Le poids de la pierre est de <span class="pierre1"></span> kg</p>
-      </div>
-      <div class="p2" onclick="selection(this)">
-        <img src="img/rock.svg" alt="" />
-        <p>Le poids de la pierre est de <span class="pierre2"></span> kg</p>
-      </div>
-      <div class="p3" onclick="selection(this)">
-        <img src="img/rock.svg" alt="" />
-        <p>Le poids de la pierre est de <span class="pierre3"></span> kg</p>
-      </div>
+    <div class="sac2" onclick="ajoutPoids(this)">
+      <img src="img/sack.svg" alt="" />
+      <p>Le poids du sac est de <span class="s2"></span> kg sur 25kg</p>
     </div>
-    <div class="poubelle" onclick="jettison()">
-      <img src="img/garbage.svg" alt="" />
+    <div class="sac3" onclick="ajoutPoids(this)">
+      <img src="img/sack.svg" alt="" />
+      <p>Le poids du sac est de <span class="s3"></span> kg sur 25kg</p>
     </div>
-    <p class="points"></p>
-    <script src="js/pierre.js"></script>
-    <script src="js/sacs.js"></script>
-    <script src="js/exo.js"></script>
-  </body>
+  </div>
+  <div class="pierres">
+    <div class="p1" onclick="selection(this)">
+      <img src="img/rock.svg" alt="" />
+      <p>Le poids de la pierre est de <span class="pierre1"></span> kg</p>
+    </div>
+    <div class="p2" onclick="selection(this)">
+      <img src="img/rock.svg" alt="" />
+      <p>Le poids de la pierre est de <span class="pierre2"></span> kg</p>
+    </div>
+    <div class="p3" onclick="selection(this)">
+      <img src="img/rock.svg" alt="" />
+      <p>Le poids de la pierre est de <span class="pierre3"></span> kg</p>
+    </div>
+  </div>
+  <div class="poubelle" onclick="jettison()">
+    <img src="img/garbage.svg" alt="" />
+  </div>
+  <p class="points"></p>
+  <script src="js/pierre.js"></script>
+  <script src="js/sacs.js"></script>
+  <script src="js/exo.js"></script>
+</body>
+
 </html>
